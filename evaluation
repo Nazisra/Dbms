@@ -1,0 +1,34 @@
+create database Practice;
+use Practice;
+create table EMPLOYEE(
+EMP_ID int primary key,
+FIRST_NAME varchar(50),
+LAST_Name varchar(50),
+DEPARTMENT varchar(50),
+SALARY float,
+HIREDATE date
+
+);
+insert into EMPLOYEE
+(EMP_ID,FIRST_NAME,LAST_Name,DEPARTMENT,SALARY,HIREDATE)
+values
+(1,"John","DEO","HR",50000,"2022-01-10"),
+(2,"Jane","smith","it",60000,"2023-03-12"),
+(3,"Alice","johnson","HR",35000,"2022-05-3"),
+(4,"bob","brown","finance",62000,"2020-05-15"),
+(5,"charlie","davins","it",75000,"2017-04-7"),
+(6,"eve","williams","marketing",45000,"2024-08-13");
+update EMPLOYEE
+set SALARY=58000
+where EMP_ID=3;
+select FIRST_NAME from EMPLOYEE
+where DEPARTMENT="it" AND SALARY >60000;
+
+select* FROM EMPLOYEE
+WHERE SALARY !=60000;
+select* from EMPLOYEE
+where HIREDATE between "2019-01-01" and "2020-01-01";
+select * FROM EMPLOYEE
+where LAST_Name like "%o%" and last_name not like"B%";
+delete from EMPLOYEE
+where EMP_ID=5;
